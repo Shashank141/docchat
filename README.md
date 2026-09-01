@@ -89,24 +89,4 @@ docchat/
     └── tailwind.config.js
 ```
 
-## Talking points for your interview
 
-- **Full-stack integration**: React frontend calling a FastAPI backend over REST,
-  with proper CORS setup and error handling on both sides.
-- **RAG pipeline**: chunking strategy (`RecursiveCharacterTextSplitter`), why local
-  embeddings vs. API-based ones, similarity search with FAISS, and prompt design
-  to keep the LLM grounded in retrieved context (reduces hallucination).
-- **Database design**: MongoDB schema for chat messages (session-scoped), with a
-  graceful in-memory fallback so the app still works without infra set up — a
-  small but real example of designing for optional dependencies.
-- **Extensibility**: swap FAISS for a persistent vector DB (Chroma, Pinecone), add
-  multi-document support, or stream responses token-by-token — good follow-up
-  questions to be ready for.
-
-## Possible extensions (if you have extra time before the interview)
-
-- Streaming responses (token-by-token) instead of waiting for the full answer
-- Show which document chunks were used to answer (the backend already returns
-  `sources` in the `/chat` response — just render them in the UI)
-- Multi-document support (multiple PDFs, pick which one to chat with)
-- Deploy: frontend to Vercel, backend to Render/Railway
